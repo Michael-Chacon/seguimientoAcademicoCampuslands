@@ -1,0 +1,18 @@
+{
+   "1": {
+      "nombreC": "Alexis",
+      "apellidos": "Chac\u00f3n",
+      "acudiente": "Maria Chacon",
+      "direccion": "Floridablanca",
+      "telefono": 1234567890,
+      "estado": "inscrito"
+   },
+   "2": {
+      "nombreC": "Laura",
+      "apellidos": "Cadena",
+      "acudiente": "su mama",
+      "direccion": "Pasto",
+      "telefono": 1234560,
+      "estado": "inscrito"
+   }
+}

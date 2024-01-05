@@ -1,10 +1,14 @@
 import os
+import json
+from conexiones import guardar
 from validaciones import existeElId as hayId
+
+
 def notasPrueba(campers, pruebas):
     os.system('clear')
     idCamper = 0
     try:
-        idCamper = int(input('Ingrese el id del camper: '))
+        idCamper = input('Ingrese el id del camper: ')
         # hayId(idCamper, campers)
     except:
         print(f"El id {idCamper} no es valido")
@@ -25,4 +29,6 @@ def notasPrueba(campers, pruebas):
                     campers[idCamper]['estado'] = 'reprobado'
 
                 pruebas[idCamper] = {'teorica': teorica, 'practica': practica, 'promedio': promedio}
+
+                guardar('pruebas', pruebas)
 
