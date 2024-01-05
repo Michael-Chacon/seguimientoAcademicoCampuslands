@@ -1,3 +1,4 @@
+import json
 from camper import *
 from notas import notasPrueba as prueba
 campers = {}
