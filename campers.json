@@ -14,5 +14,84 @@
       "direccion": "Pasto",
       "telefono": 1234560,
       "estado": "inscrito"
+   },
+   "3": {
+      "nombreC": "Nelson",
+      "apellidos": "Diaz",
+      "direccion": "Floridablanca",
+      "acudiente": "el pap\u00e1",
+      "estado": "inscrito",
+      "telefono": {
+         "celular": [
+            "123",
+            "456"
+         ],
+         "fijo": [
+            "789",
+            "951"
+         ]
+      }
+   },
+   "4": {
+      "nombreC": "Duvan",
+      "apellidos": "Hernandez ",
+      "direccion": "Socorro",
+      "acudiente": "la mam\u00e1",
+      "estado": "inscrito",
+      "telefono": {
+         "celular": [
+            "321"
+         ],
+         "fijo": [
+            "456"
+         ]
+      }
+   },
+   "5": {
+      "nombreC": "Sofia",
+      "apellidos": "Cardenas",
+      "direccion": "Cucuta",
+      "acudiente": "la mam\u00e1",
+      "estado": "inscrito",
+      "telefono": {
+         "celular": [
+            "123",
+            "741"
+         ],
+         "fijo": [
+            "456"
+         ]
+      }
+   },
+   "a1": {
+      "nombreC": "Maritza",
+      "apellidos": "Corredor",
+      "direccion": "Floridablanca",
+      "acudiente": "la mam\u00e1",
+      "estado": "inscrito",
+      "telefono": {
+         "celular": [
+            "123"
+         ],
+         "fijo": [
+            "159",
+            "450"
+         ]
+      }
+   },
+   "d1": {
+      "nombreC": "Camper",
+      "apellidos": "lands",
+      "direccion": "sona franca",
+      "acudiente": "ing. Andres",
+      "estado": "inscrito",
+      "telefono": {
+         "celular": [
+            "123456"
+         ],
+         "fijo": [
+            "31256470"
+         ]
+      }
    }
 }

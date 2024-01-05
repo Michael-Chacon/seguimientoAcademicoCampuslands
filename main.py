@@ -1,5 +1,4 @@
-import json
-from camper import *
+from camper import mostraCampers, guardar as guardarCamper
 from notas import notasPrueba as prueba
 from conexiones import conexion as con, guardar
 
@@ -16,10 +15,10 @@ matriculas = {}
 #                 'apellidos': 'Chacón',
 #                 'acudiente': 'Maria Chacón',
 #                 'direccion': 'Floridablanca',
-#                 'telefono': 1234567890,
+#                 'telefono': {'celular': [], 'fijo': []},
 #                 'estado': 'inscrito'
 #             }
-guardar('campers', campers)
+# guardar('campers', campers)
 
 trainer[1] = {'nombreT': 'Miguel'}
 rutas[1] = {'nombreRuta': 'Java'}
@@ -28,10 +27,10 @@ salas[1] = {'sala': 'Sputnik'}
 rutaTrainer[1] = {'idRutaT': 1, 'horario': '6-9am'}
 matriculas[1] = {'idTreinerM': 1, 'idRutaM': 1, 'idSalaM': 1, 'fechaInico': '11-27-2023', 'fechaFin': '06-27-2024'}
 
-# mostraCampers(campers)
+guardarCamper(campers)
+mostraCampers(campers)
 
-prueba(campers, pruebas)
+# prueba(campers, pruebas)
 
-# print(type(campers.keys()))
 print(campers)
 print(pruebas)
