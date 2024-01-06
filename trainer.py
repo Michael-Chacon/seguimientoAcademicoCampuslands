@@ -1,6 +1,6 @@
 import os
 from validaciones import romperCiclo
-from conexiones import guardar as guardarTrainer, conexion as con
+from conexiones import guardar as guardarEnJson, conexion as con
 
 #immportar los jsons
 rutas = con('rutas')
@@ -8,7 +8,7 @@ horarios = con('horarios')
 rutaTrainers = con('rutaTrainers')
 trainers = con('trainers')
 
-def guardar(trainers):
+def guardar():
     bandera = True
     while bandera:
         os.system('clear')
@@ -18,9 +18,11 @@ def guardar(trainers):
         else:
             nombre = input('Ingrese el nombre del trainer: ')
             trainers[id] = {'nombreT': nombre}
-            guardarTrainer('trainers', trainers)
+            guardarEnJson('trainers', trainers)
+            rutaTrainers[id] = {'idHorario': [], 'idRutaRT': []}
+            guardarEnJson('rutaTrainers', rutaTrainers)
             print('\n--- Trainer registrado con éxito ---\n')
-       
+        bandera = romperCiclo('otro treiner')
        
 def mostrarInfoBasica():
     print(40 * "-")
@@ -40,6 +42,7 @@ def guardarRutaTrainer():
         if idTrainer not in  trainers:
             print(f"\nError - el id {idTrainer} no esta asignado a ningun trainer\n")
         else:
+            # print(rutaTrainers[idTrainer])
             print(f"\nSeleccione la ruta que le va a asignar al trainer {trainers[idTrainer]['nombreT']}:")
             for llave, valor in rutas.items():
                 print(f"\t{llave}: {valor['nombreR']}")
@@ -51,4 +54,10 @@ def guardarRutaTrainer():
                 for llave, valor in horarios.items():
                     print(f"\t{llave}: {valor['hora']}")
                 hora = input(": ")
+                if hora not in horarios:
+                    print("\nError- el horario seleccionado no existe\n")
+                else:
+                    rutaTrainers[idTrainer]['idHorario'].append(hora)
+                    rutaTrainers[idTrainer]['idRutaRT'].append(idRuta)
+                    guardarEnJson('rutaTrainers', rutaTrainers)
         bandera = romperCiclo('otra ruta a otro trainer')
