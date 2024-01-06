@@ -6,32 +6,38 @@ notasPruebas = conexion('pruebas') # Obtener el diccionario con todas las notas
 
 def guardarNotasPrueba(campers):
     os.system('clear')
-    idCamper = 0
+    idAspirante = 0
     try:
-        idCamper = input('Ingrese el id del camper: ')
-        # hayId(idCamper, campers)
+        idAspirante = input('Ingrese el id del camper: ')
+        # hayId(idAspirante, campers)
     except:
-        print(f"El id {idCamper} no es valido")
+        print(f"El id {idAspirante} no es valido")
     else:
-        if(not hayId(idCamper, campers)):
-            print(f"No existe un camper con el id {idCamper}")
+        if(not hayId(idAspirante, campers)):
+            print(f"No existe un camper con el id {idAspirante}")
         else:
-            if hayId(idCamper, notasPruebas):
-                print(f"{campers[idCamper]['nombreC']} ya realizo las pruebas")
+            if hayId(idAspirante, notasPruebas):
+                print(f"{campers[idAspirante]['nombreC']} ya realizo las pruebas")
             else:
                 teorica = float(input('Nota de la prueba teorica: '))
                 practica = float(input('Nota de la prueba practica: '))
                 promedio = (teorica + practica) / 2
 
                 if promedio >= 60:
-                    campers[idCamper]['estado'] = 'aprobado'
+                    campers[idAspirante]['estado'] = 'aprobado'
                 elif promedio < 60:
-                    campers[idCamper]['estado'] = 'reprobado'
+                    campers[idAspirante]['estado'] = 'reprobado'
 
-                notasPruebas[idCamper] = {'teorica': teorica, 'practica': practica, 'promedio': promedio}
+                notasPruebas[idAspirante] = {'teorica': teorica, 'practica': practica, 'promedio': promedio}
 
                 guardar('pruebas', notasPruebas)
 
 
-def estudiantePruebaAdmision(idAspir):
-    pass
+def estudiantePruebaAdmision(idAspirante):
+    if idAspirante in notasPruebas:
+        teorico = notasPruebas[idAspirante]['teorica']
+        practica = notasPruebas[idAspirante]['practica']
+        promedio = notasPruebas[idAspirante]['promedio']
+        return [teorico, practica, promedio]
+    else:
+        return ['sin nota', 'sin nota', 'sin nota']

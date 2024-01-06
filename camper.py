@@ -1,6 +1,8 @@
 import os
-from conexiones import guardar as actualizarJson
+from notas import estudiantePruebaAdmision as promedio
 from validaciones import romperCiclo
+from conexiones import guardar as actualizarJson
+
 from menus import telefono as menuTelefono
 
 def guardar(campers):
@@ -36,6 +38,16 @@ def guardar(campers):
         os.system('clear')
 
         
-def mostraCampers(campers):
+# def mostraCampers(campers):
+#     for llave, valor in campers.items():
+#         print(f"ID: {llave} | NOMBRE: {valor['nombreC']}")
+        
+
+def mostrarNotasAspirante(campers):
+    print(40 * "-")
+    print("| ID \t| NOMBRE \t| TEORICO \t| PRACTICO \t| PROMEDIO")
+    print(40 * "-")
     for llave, valor in campers.items():
-        print(f"ID: {llave} | NOMBRE: {valor['nombreC']}")
+        notas = promedio(llave)
+        print(f"| {llave} \t| {valor['nombreC']} \t| {notas[0]} \t| {notas[1]} \t| {notas[2]}")
+        print(40 * "-")

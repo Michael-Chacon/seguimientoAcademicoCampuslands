@@ -1,4 +1,4 @@
-from camper import guardar as guardarCamper
+from camper import guardar as guardarCamper, mostrarNotasAspirante as relacion
 from trainer import guardar as guardarTrainer
 from notas import guardarNotasPrueba as prueba
 from conexiones import conexion as con, guardar
@@ -32,11 +32,12 @@ matriculas[1] = {'idTreinerM': 1, 'idRutaM': 1, 'idSalaM': 1, 'fechaInico': '11-
 
 # guardarCamper(campers)
 listarInfo(campers, 'nombreC')
+relacion(campers)
 
-# guardarTrainer(trainers)
-listarInfo(trainers, 'nombreT')
+# # guardarTrainer(trainers)
+# listarInfo(trainers, 'nombreT')
 
-prueba(campers)
+# prueba(campers)
 
-print(trainers)
+# print(trainers)
 # print(pruebas)
