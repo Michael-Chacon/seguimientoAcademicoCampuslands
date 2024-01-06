@@ -10,7 +10,7 @@ def guardar(campers):
         print('\n----- Registrar un aspirante -----\n')
         id = input('Ingrese el id: ')
         if id in campers:
-            print(f"\n*** El aspirante {campers[id]['nombreC']} ya tiene asigando el id {id} ***\n")
+            print(f"\n*** Error - el aspirante {campers[id]['nombreC']} ya tiene asigando el id {id} ***\n")
         else:
             nombre = input('Nombre del aspirante: ')
             apellidos = input('Apellidos: ')
@@ -34,6 +34,8 @@ def guardar(campers):
             os.system('clear')
         bandera1 = romperCiclo('agregar otro aspirante')
         os.system('clear')
+
+        
 def mostraCampers(campers):
     for llave, valor in campers.items():
         print(f"ID: {llave} | NOMBRE: {valor['nombreC']}")

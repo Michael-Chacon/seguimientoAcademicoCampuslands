@@ -1,5 +1,4 @@
 import os
-import json
 from conexiones import guardar
 from validaciones import existeElId as hayId
 
