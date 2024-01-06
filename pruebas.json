@@ -18,5 +18,10 @@
       "teorica": 25.0,
       "practica": 15.0,
       "promedio": 20.0
+   },
+   "d1": {
+      "teorica": 55.0,
+      "practica": 80.0,
+      "promedio": 67.5
    }
 }

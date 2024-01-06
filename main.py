@@ -1,6 +1,6 @@
-from notas import notasPrueba as prueba
 from camper import guardar as guardarCamper
 from trainer import guardar as guardarTrainer
+from notas import guardarNotasPrueba as prueba
 from conexiones import conexion as con, guardar
 from utils import mostrarInfoBasica as listarInfo
 
@@ -9,7 +9,7 @@ campers = con('campers')
 trainers = con('trainers')
 rutas = con('rutas')
 salas = con('salas')
-pruebas = con('pruebas')
+# pruebas = con('pruebas')
 rutaTrainer = {}
 matriculas = {}
 
@@ -36,7 +36,7 @@ listarInfo(campers, 'nombreC')
 # guardarTrainer(trainers)
 listarInfo(trainers, 'nombreT')
 
-prueba(campers, pruebas)
+prueba(campers)
 
 print(trainers)
 # print(pruebas)

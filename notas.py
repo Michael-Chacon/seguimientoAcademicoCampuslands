@@ -1,9 +1,10 @@
 import os
-from conexiones import guardar
+from conexiones import guardar, conexion
 from validaciones import existeElId as hayId
 
+notasPruebas = conexion('pruebas') # Obtener el diccionario con todas las notas
 
-def notasPrueba(campers, pruebas):
+def guardarNotasPrueba(campers):
     os.system('clear')
     idCamper = 0
     try:
@@ -15,7 +16,7 @@ def notasPrueba(campers, pruebas):
         if(not hayId(idCamper, campers)):
             print(f"No existe un camper con el id {idCamper}")
         else:
-            if hayId(idCamper, pruebas):
+            if hayId(idCamper, notasPruebas):
                 print(f"{campers[idCamper]['nombreC']} ya realizo las pruebas")
             else:
                 teorica = float(input('Nota de la prueba teorica: '))
@@ -27,7 +28,10 @@ def notasPrueba(campers, pruebas):
                 elif promedio < 60:
                     campers[idCamper]['estado'] = 'reprobado'
 
-                pruebas[idCamper] = {'teorica': teorica, 'practica': practica, 'promedio': promedio}
+                notasPruebas[idCamper] = {'teorica': teorica, 'practica': practica, 'promedio': promedio}
 
-                guardar('pruebas', pruebas)
+                guardar('pruebas', notasPruebas)
 
+
+def estudiantePruebaAdmision(idAspir):
+    pass
