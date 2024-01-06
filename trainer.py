@@ -42,22 +42,27 @@ def guardarRutaTrainer():
         if idTrainer not in  trainers:
             print(f"\nError - el id {idTrainer} no esta asignado a ningun trainer\n")
         else:
-            # print(rutaTrainers[idTrainer])
-            print(f"\nSeleccione la ruta que le va a asignar al trainer {trainers[idTrainer]['nombreT']}:")
-            for llave, valor in rutas.items():
-                print(f"\t{llave}: {valor['nombreR']}")
-            idRuta = input(": ")
-            if idRuta not in rutas:
-                print(f"Error - el id {idRuta} no está asignado a ninguna ruta")
+            if len(rutaTrainers[idTrainer]['idHorario']) == 4:
+                print(f"\n*** Alerta - el trainer {trainers[idTrainer]['nombreT']} no tiene horarios disponibles ***\n")
+                bandera = False
             else:
-                print("\nSelecione el horario en que el trainer dictara la ruta:")
-                for llave, valor in horarios.items():
-                    print(f"\t{llave}: {valor['hora']}")
-                hora = input(": ")
-                if hora not in horarios:
-                    print("\nError- el horario seleccionado no existe\n")
+            # print(rutaTrainers[idTrainer])
+                print(f"\nSeleccione la ruta que le va a asignar al trainer {trainers[idTrainer]['nombreT']}:")
+                for llave, valor in rutas.items():
+                    print(f"\t{llave}: {valor['nombreR']}")
+                idRuta = input(": ")
+                if idRuta not in rutas:
+                    print(f"Error - el id {idRuta} no está asignado a ninguna ruta")
                 else:
-                    rutaTrainers[idTrainer]['idHorario'].append(hora)
-                    rutaTrainers[idTrainer]['idRutaRT'].append(idRuta)
-                    guardarEnJson('rutaTrainers', rutaTrainers)
+                    print("\nSelecione el horario en que el trainer dictara la ruta:")
+                    for llave, valor in horarios.items():
+                        if rutaTrainers[idTrainer]['idHorario'].count(llave) == 0:
+                            print(f"\t{llave}: {valor['hora']}")
+                    hora = input(": ")
+                    if hora not in horarios:
+                        print("\nError- el horario seleccionado no existe\n")
+                    else:
+                        rutaTrainers[idTrainer]['idHorario'].append(hora)
+                        rutaTrainers[idTrainer]['idRutaRT'].append(idRuta)
+                        guardarEnJson('rutaTrainers', rutaTrainers)
         bandera = romperCiclo('otra ruta a otro trainer')
