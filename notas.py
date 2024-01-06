@@ -33,11 +33,11 @@ def guardarNotasPrueba(campers):
                 guardar('pruebas', notasPruebas)
 
 
-# def estudiantePruebaAdmision(idAspirante):
-#     if idAspirante in notasPruebas:
-#         teorico = notasPruebas[idAspirante]['teorica']
-#         practica = notasPruebas[idAspirante]['practica']
-#         promedio = notasPruebas[idAspirante]['promedio']
-#         return [teorico, practica, promedio]
-#     else:
-#         return ['sin nota', 'sin nota', 'sin nota']
+def estudiantePruebaAdmision(idAspirante):
+    if idAspirante in notasPruebas:
+        teorico = notasPruebas[idAspirante]['teorica']
+        practica = notasPruebas[idAspirante]['practica']
+        promedio = notasPruebas[idAspirante]['promedio']
+        return [teorico, practica, promedio]
+    else:
+        return ['sin nota', 'sin nota', 'sin nota']

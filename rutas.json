@@ -1,1 +1,14 @@
-{}
+{
+    "1": {
+        "nombreR": "NodeJS", 
+        "idSalaR": 2
+    },
+    "2": {
+        "nombreR": "Java", 
+        "idSalaR": 3
+    },
+    "3": {
+        "nombreR": "NetCore", 
+        "idSalaR": 1
+    }
+}

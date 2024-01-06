@@ -93,5 +93,20 @@
             "31256470"
          ]
       }
+   },
+   "88": {
+      "nombreC": "tal",
+      "apellidos": "tal otro",
+      "direccion": "florida",
+      "acudiente": "taltal",
+      "estado": "inscrito",
+      "telefono": {
+         "celular": [
+            "1236"
+         ],
+         "fijo": [
+            "4568"
+         ]
+      }
    }
 }
