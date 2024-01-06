@@ -8,6 +8,7 @@ horarios = con('horarios')
 rutaTrainers = con('rutaTrainers')
 trainers = con('trainers')
 
+
 def guardar():
     bandera = True
     while bandera:
@@ -24,6 +25,7 @@ def guardar():
             print('\n--- Trainer registrado con éxito ---\n')
         bandera = romperCiclo('otro treiner')
        
+
 def mostrarInfoBasica():
     print(40 * "-")
     print("| ID \t| NOMBRE \t|")
@@ -46,7 +48,6 @@ def guardarRutaTrainer():
                 print(f"\n*** Alerta - el trainer {trainers[idTrainer]['nombreT']} no tiene horarios disponibles ***\n")
                 bandera = False
             else:
-            # print(rutaTrainers[idTrainer])
                 print(f"\nSeleccione la ruta que le va a asignar al trainer {trainers[idTrainer]['nombreT']}:")
                 for llave, valor in rutas.items():
                     print(f"\t{llave}: {valor['nombreR']}")
@@ -66,3 +67,19 @@ def guardarRutaTrainer():
                         rutaTrainers[idTrainer]['idRutaRT'].append(idRuta)
                         guardarEnJson('rutaTrainers', rutaTrainers)
         bandera = romperCiclo('otra ruta a otro trainer')
+
+
+def trainerRutasHorarios(id):
+    rutaTrainers = con('rutaTrainers')
+
+    print(rutaTrainers[id])
+    for i in range(3):
+        print(f"{i}: {buscarDatosRuta(i)} | {buscarDatosHora(i)}")
+
+
+def buscarDatosRuta(id):
+    return rutas[id]['nombreR']
+
+def buscarDatosHora(id):
+    
+    return horarios[id]['hora']

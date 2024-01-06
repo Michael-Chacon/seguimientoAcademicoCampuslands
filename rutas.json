@@ -1,14 +1,26 @@
 {
-    "1": {
-        "nombreR": "NodeJS", 
-        "idSalaR": 2
-    },
-    "2": {
-        "nombreR": "Java", 
-        "idSalaR": 3
-    },
-    "3": {
-        "nombreR": "NetCore", 
-        "idSalaR": 1
-    }
+   "1": {
+      "nombreR": "NodeJS",
+      "idSalaR": "2"
+   },
+   "2": {
+      "nombreR": "Java",
+      "idSalaR": "3"
+   },
+   "3": {
+      "nombreR": "NetCore",
+      "idSalaR": "1"
+   },
+   "4": {
+      "nombreR": "PHP",
+      "idsalaR": "2"
+   },
+   "5": {
+      "nombreR": "Laravel",
+      "idsalaR": "3"
+   },
+   "8": {
+      "nombreR": "Spring",
+      "idsalaR": "1"
+   }
 }

@@ -1,32 +1,17 @@
 {
    "1": {
-      "teorica": 66.0,
-      "practica": 55.0,
-      "promedio": 60.5
+      "teorica": 80.0,
+      "practica": 90.0,
+      "promedio": 85.0
    },
    "2": {
-      "teorica": 66.0,
-      "practica": 78.0,
-      "promedio": 72.0
+      "teorica": 70.0,
+      "practica": 75.0,
+      "promedio": 72.5
    },
-   "3": {
-      "teorica": 55.0,
-      "practica": 32.0,
-      "promedio": 43.5
-   },
-   "5": {
-      "teorica": 25.0,
-      "practica": 15.0,
-      "promedio": 20.0
-   },
-   "d1": {
-      "teorica": 55.0,
-      "practica": 80.0,
-      "promedio": 67.5
-   },
-   "88": {
+   "4": {
       "teorica": 60.0,
-      "practica": 80.0,
-      "promedio": 70.0
+      "practica": 65.0,
+      "promedio": 62.5
    }
 }

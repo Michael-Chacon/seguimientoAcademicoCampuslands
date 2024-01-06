@@ -5,7 +5,8 @@
       "acudiente": "Maria Chacon",
       "direccion": "Floridablanca",
       "telefono": 1234567890,
-      "estado": "inscrito"
+      "estado": "aprobado",
+      "haveRuta": "no"
    },
    "2": {
       "nombreC": "Laura",
@@ -13,7 +14,8 @@
       "acudiente": "su mama",
       "direccion": "Pasto",
       "telefono": 1234560,
-      "estado": "inscrito"
+      "estado": "aprobado",
+      "haveRuta": "no"
    },
    "3": {
       "nombreC": "Nelson",
@@ -30,14 +32,15 @@
             "789",
             "951"
          ]
-      }
+      },
+      "haveRuta": "no"
    },
    "4": {
       "nombreC": "Duvan",
       "apellidos": "Hernandez ",
       "direccion": "Socorro",
       "acudiente": "la mam\u00e1",
-      "estado": "inscrito",
+      "estado": "aprobado",
       "telefono": {
          "celular": [
             "321"
@@ -45,7 +48,8 @@
          "fijo": [
             "456"
          ]
-      }
+      },
+      "haveRuta": "no"
    },
    "5": {
       "nombreC": "Sofia",
@@ -61,7 +65,8 @@
          "fijo": [
             "456"
          ]
-      }
+      },
+      "haveRuta": "no"
    },
    "a1": {
       "nombreC": "Maritza",
@@ -77,7 +82,8 @@
             "159",
             "450"
          ]
-      }
+      },
+      "haveRuta": "no"
    },
    "d1": {
       "nombreC": "Camper",
@@ -92,7 +98,8 @@
          "fijo": [
             "31256470"
          ]
-      }
+      },
+      "haveRuta": "no"
    },
    "88": {
       "nombreC": "tal",
@@ -107,6 +114,7 @@
          "fijo": [
             "4568"
          ]
-      }
+      },
+      "haveRuta": "no"
    }
 }

@@ -19,6 +19,7 @@ def guardar(campers):
             direccion = input('Direccion: ')
             acudiente = input('Acudiente: ')
             estado = 'inscrito'
+            haveRuta = 'no'
             celular = []
             fijo = []
             bandera = True
@@ -31,7 +32,7 @@ def guardar(campers):
                 elif opc == '2':
                     fijo.append(numero)
                 bandera = romperCiclo('ingresar otro número') # Función para preguntar si seguir pidiendo numero o no.
-            campers[id] = {'nombreC': nombre, 'apellidos': apellidos, 'direccion': direccion, 'acudiente': acudiente, 'estado': estado, 'telefono': {'celular': celular, 'fijo': fijo}}
+            campers[id] = {'nombreC': nombre, 'apellidos': apellidos, 'direccion': direccion, 'acudiente': acudiente, 'estado': estado, 'telefono': {'celular': celular, 'fijo': fijo}, 'haveRuta': haveRuta}
             actualizarJson('campers', campers)
             os.system('clear')
         bandera1 = romperCiclo('agregar otro aspirante')
