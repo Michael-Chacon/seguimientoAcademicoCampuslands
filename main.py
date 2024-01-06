@@ -32,7 +32,7 @@ matriculas[1] = {'idTreinerM': 1, 'idRutaM': 1, 'idSalaM': 1, 'fechaInico': '11-
 
 # guardarCamper(campers)
 listarInfo(campers, 'nombreC')
-relacion(campers)
+# relacion(campers)
 
 # # guardarTrainer(trainers)
 # listarInfo(trainers, 'nombreT')
