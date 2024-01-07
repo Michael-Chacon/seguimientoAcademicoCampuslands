@@ -71,15 +71,14 @@ def guardarRutaTrainer():
 
 def trainerRutasHorarios(id):
     rutaTrainers = con('rutaTrainers')
+    print(len(rutaTrainers[id]['idHorario']))
+    for i in range(0,len(rutaTrainers[id]['idHorario'])):
+        print(f"{i}: {buscarDatosRuta(rutaTrainers[id]['idRutaRT'][i])} | {buscarDatosHora(rutaTrainers[id]['idHorario'][i])}")
 
-    print(rutaTrainers[id])
-    for i in range(3):
-        print(f"{i}: {buscarDatosRuta(i)} | {buscarDatosHora(i)}")
 
+def buscarDatosRuta(idRuta):
+    return rutas[idRuta]['nombreR']
 
-def buscarDatosRuta(id):
-    return rutas[id]['nombreR']
-
-def buscarDatosHora(id):
+def buscarDatosHora(idHorario):
     
-    return horarios[id]['hora']
+    return horarios[idHorario]['hora']
