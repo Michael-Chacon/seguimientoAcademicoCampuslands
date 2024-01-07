@@ -6,7 +6,7 @@
       "direccion": "Floridablanca",
       "telefono": 1234567890,
       "estado": "aprobado",
-      "haveRuta": "no"
+      "haveRuta": "si"
    },
    "2": {
       "nombreC": "Laura",

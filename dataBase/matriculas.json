@@ -5,5 +5,12 @@
       "fechaInicio": "27-8-2024",
       "fechaFin": "27-8-2024",
       "idSalaM": "2"
+   },
+   "1": {
+      "idTrainerM": "2",
+      "idRutaM": "1",
+      "fechaInicio": "2-3-2024",
+      "fechaFin": "2-3-2024",
+      "idSalaM": "2"
    }
 }

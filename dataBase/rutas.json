@@ -22,5 +22,9 @@
    "8": {
       "nombreR": "Spring",
       "idsalaR": "1"
+   },
+   "as": {
+      "nombreR": "rust",
+      "idsalaR": "1"
    }
 }
