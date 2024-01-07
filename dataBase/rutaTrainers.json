@@ -22,7 +22,11 @@
       ]
    },
    "asd": {
-      "idHorario": [],
-      "idRutaRT": []
+      "idHorario": [
+         "1"
+      ],
+      "idRutaRT": [
+         "4"
+      ]
    }
 }

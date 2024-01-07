@@ -1,6 +1,7 @@
-from notas import guardarNotasPrueba as prueba, matricularCamper
+from rutas import guardarRuta
 from conexiones import conexion as con, guardar
-from utils import mostrarInfoBasica as listarInfo, guardarRuta
+from utils import mostrarInfoBasica as listarInfo
+from notas import guardarNotasPrueba as prueba, matricularCamper
 from camper import guardar as guardarCamper #, mostrarNotasAspirante as relacion
 from trainer import guardar as guardarTrainer, guardarRutaTrainer as rutaTreiner
 
@@ -36,9 +37,9 @@ salas[1] = {'sala': 'Sputnik'}
 # relacion(campers)
 # rutaTreiner()
 # listarInfo(trainers, 'nombreT')
-# guardarRuta()
+guardarRuta()
 # prueba(campers)
-matricularCamper()
+# matricularCamper()
 
 # print(trainers)
 # print(pruebas)
