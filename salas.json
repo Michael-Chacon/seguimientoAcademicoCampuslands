@@ -1,17 +1,11 @@
 {
     "1": {
-        "nombreS": "Sputnik",
-        "cupo": 33,
-        "disponible": 33
+        "nombreS": "Sputnik"
     }, 
     "2": {
-        "nombreS": "Artemisa",
-        "cupo": 33,
-        "disponible": 33
+        "nombreS": "Artemisa"
     },
     "3": {
-        "nombreS": "Nasa",
-        "cupo": 33,
-        "disponible": 33
+        "nombreS": "Nasa"
     }
 }

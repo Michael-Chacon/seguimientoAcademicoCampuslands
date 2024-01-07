@@ -70,14 +70,19 @@ def guardarRutaTrainer():
 
 
 def trainerRutasHorarios(id):
+    listaRutas = []
     rutaTrainers = con('rutaTrainers')
-    print(len(rutaTrainers[id]['idHorario']))
+    print("\tID") # onden en el que se muestran los datos: id - id de la ruta - id del horario
     for i in range(0,len(rutaTrainers[id]['idHorario'])):
-        print(f"{i}: {buscarDatosRuta(rutaTrainers[id]['idRutaRT'][i])} | {buscarDatosHora(rutaTrainers[id]['idHorario'][i])}")
+        print(f"\t{i}: {buscarDatosRuta(rutaTrainers[id]['idRutaRT'][i])} | {buscarDatosHora(rutaTrainers[id]['idHorario'][i])}")
+        arrayTemporal = [i+1,  rutaTrainers[id]['idRutaRT'][i], rutaTrainers[id]['idHorario'][i]]
+        listaRutas.append(arrayTemporal)
+    return listaRutas
 
 
 def buscarDatosRuta(idRuta):
     return rutas[idRuta]['nombreR']
+
 
 def buscarDatosHora(idHorario):
     

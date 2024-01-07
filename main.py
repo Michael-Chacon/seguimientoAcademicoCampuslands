@@ -30,7 +30,7 @@ salas[1] = {'sala': 'Sputnik'}
 # rutaTrainer[1] = {'idRutaT': 1, 'horario': '6-9am'}
 # matriculas[1] = {'idTreinerM': 1, 'idRutaM': 1, 'idSalaM': 1, 'fechaInico': '11-27-2023', 'fechaFin': '06-27-2024'}
 
-# guardarCamper(campers)
+# guardarCamper()
 # guardarTrainer()
 # listarInfo(trainers, 'nombreT')
 # relacion(campers)

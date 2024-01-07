@@ -1,11 +1,11 @@
 import os
-from notas import estudiantePruebaAdmision as promedio
+# from notas import estudiantePruebaAdmision as promedio
 from validaciones import romperCiclo
-from conexiones import guardar as actualizarJson
+from conexiones import guardar as actualizarJson, conexion
 
 from menus import telefono as menuTelefono
-
-def guardar(campers):
+campers = conexion('campers')
+def guardar():
     bandera1 = True
     while bandera1:
         os.system('clear')
@@ -37,6 +37,11 @@ def guardar(campers):
             os.system('clear')
         bandera1 = romperCiclo('agregar otro aspirante')
         os.system('clear')
+
+
+def registrarAsigancionRuta(idCamper):
+    campers[idCamper]['haveRuta'] = 'si'
+    actualizarJson('campers', campers)
 
         
 # def mostraCampers(campers):

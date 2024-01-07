@@ -24,6 +24,12 @@ def mostrarCampersConFiltro(estado, ruta):
             print(40 * "-")
 
 
+def restarCupoAHorario(idHorario):
+    horarios = con('horarios')
+    horarios[idHorario]['disponible'] -= 1
+    guardarEnJson('horarios', horarios)
+
+
 def guardarRuta():
     rutas = con('rutas')
     salas = con('salas')
