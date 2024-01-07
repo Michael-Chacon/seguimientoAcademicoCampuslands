@@ -28,3 +28,12 @@ def restarCupoAHorario(idHorario):
     horarios = con('horarios')
     horarios[idHorario]['disponible'] -= 1
     guardarEnJson('horarios', horarios)
+
+
+def seleccionarSgbd(opcion):
+    if opcion == 1:
+        return 'Mysql'
+    elif opcion == 2:
+        return 'MongoDb'
+    elif opcion == 3:
+        return 'Postgresql'

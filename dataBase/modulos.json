@@ -1,0 +1,18 @@
+{
+    "1": {
+        "fundamentos": ["Introducción a la algoritmia", " PSeInt", "Python", "Git"]
+    },
+    "2": {
+        "programacion Web": ["HTML", " CSS", "Tailwind"]
+    },
+    "3": {
+        "programacion formal": ["Java", "JavaScript", "C#"]
+    },
+    "4": {
+        "bases de datos": ["Mysql", "MongoDb", "Postgresql"]
+    },
+    "5": {
+        "backend": ["NetCore", "Spring Boot", "NodeJS y Express"]
+    }
+    
+}

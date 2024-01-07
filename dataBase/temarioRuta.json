@@ -1,0 +1,23 @@
+{
+    "1": {
+        "fundamentos": ["Introducción a la algoritmia", " PSeInt", "Python", "Git y gitHub"],
+        "programacion Web": ["HTML", " CSS", "Tailwind"],
+        "programacion formal": ["JavaScript"],
+        "bases de datos": ["Mysql", "MongoDb"],
+        "backend": ["NodeJS y Express"]
+    },
+    "2": {
+        "fundamentos": ["Introducción a la algoritmia", " PSeInt", "Python", "Git y gitHub"],
+        "programacion Web": ["HTML", " CSS", "Tailwind"],
+        "programacion formal": ["Java"],
+        "bases de datos": ["Mysql", "Postgresql"],
+        "backend": ["Spring Boot"]
+    },
+    "3": {
+        "fundamentos": ["Introducción a la algoritmia", " PSeInt", "Python", "Git y gitHub"],
+        "programacion Web": ["HTML", " CSS", "Tailwind"],
+        "programacion formal": [".Net"],
+        "bases de datos": ["Mysql", " MongoDb"],
+        "backend": ["NetCore"]
+    }
+}
