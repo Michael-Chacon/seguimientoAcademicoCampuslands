@@ -55,7 +55,6 @@ def matricularCamper():
     trainers = conexion('trainers')
     banderaMain = True
     while banderaMain:
-        os.system('clear')
         mostrarCampers('aprobado', 'no')
         idCamper = input("Ingrese el id del camper que va a matricular: ")
         if idCamper in matriculas:
@@ -98,4 +97,4 @@ def matricularCamper():
                 else:
                     print("*** Alerta - el horario seleccionado no tiene cupos disponibles, el camper no puede ser matriculdo en este horario ***")
             banderaMain = romperCiclo('matricular otro camper')
-        
+            os.system('clear')
