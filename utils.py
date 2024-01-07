@@ -14,7 +14,6 @@ def mostrarInfoBasica(diccionario, name):
 
 def mostrarCampersConFiltro(estado, ruta):
     campers = con('campers')
-    print("\nListado de campers con estado aprobado y sin ruta asignada:")
     print(40 * "-")
     print("| ID \t| NOMBRE ")
     print(40 * "-")

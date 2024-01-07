@@ -55,6 +55,7 @@ def matricularCamper():
     trainers = conexion('trainers')
     banderaMain = True
     while banderaMain:
+        print("\nListado de campers con estado aprobado y sin ruta asignada:")
         mostrarCampers('aprobado', 'no')
         idCamper = input("Ingrese el id del camper que va a matricular: ")
         if idCamper in matriculas:
@@ -98,3 +99,13 @@ def matricularCamper():
                     print("*** Alerta - el horario seleccionado no tiene cupos disponibles, el camper no puede ser matriculdo en este horario ***")
             banderaMain = romperCiclo('matricular otro camper')
             os.system('clear')
+
+
+def filtro():
+    campers = conexion('campers')
+
+    print(f"\nListado de campers con estado aprobado:")
+    mostrarCampers('aprobado', 'si')
+    camper = input("Seleccine el id del camper al que le va a asiganar la nota del filtro: ")
+    if camper not in campers:
+        print(f"Error - el id {camper} no esta asignado a ningun camper")
