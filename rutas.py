@@ -34,15 +34,16 @@ def guardarRuta():
                     alternativo = int(input("Seleccione el SGBD alternativo de la ruta: "))
                     # temarioRuta[idRuta]['bases de datos'].append(seleccionarSgbd(alternativo))
                     db.append(seleccionarSgbd(alternativo))
-                
-            banderaNose = True
+
+            banderaHija = True
             print("***** BACKEND *****")
             backend = []
-            while True:
+            
+            while banderaHija:
                 back = input("Ingrese el framework que que se verá en la ruta: ")
                 backend.append(back)
                 print("tallllll")
-                banderaNose = romperCiclo('otro framework al temario backend')
+                banderaHija = romperCiclo('otro framework al temario backend')
             temarioRuta[idRuta] = {'fundamentos': ["Introducción a la algoritmia", " PSeInt", "Python", "Git y gitHub"], "programacion Web": ["HTML", " CSS", "Tailwind"],"programacion formal": [nombre], "bases de datos": db, "backend": backend}
             guardar('temarioRuta', temarioRuta)
 
