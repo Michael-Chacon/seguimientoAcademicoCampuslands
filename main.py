@@ -1,6 +1,7 @@
 import os
 from rutas import guardarRuta
-from conexiones import conexion as con
+from conexiones import conexion as con, guardar
+from utils import mostrarInfoBasica as listarInfo
 from notas import guardarNotasPrueba as prueba, matricularCamper, filtro
 from camper import guardar as guardarCamper #, mostrarNotasAspirante as relacion
 from trainer import guardar as guardarTrainer, guardarRutaTrainer as rutaTreiner

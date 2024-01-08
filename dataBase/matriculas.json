@@ -1,1 +1,37 @@
-{}
+{
+   "1": {
+      "idTrainerM": "1",
+      "idRutaM": "2",
+      "fechaInicio": "27-11-2024",
+      "fechaFin": "27-11-2024",
+      "idSalaM": "3"
+   },
+   "2": {
+      "idTrainerM": "1",
+      "idRutaM": "2",
+      "fechaInicio": "27-11-2024",
+      "fechaFin": "27-11-2024",
+      "idSalaM": "3"
+   },
+   "3": {
+      "idTrainerM": "1",
+      "idRutaM": "2",
+      "fechaInicio": "fdfadf",
+      "fechaFin": "fdfadf",
+      "idSalaM": "3"
+   },
+   "4": {
+      "idTrainerM": "1",
+      "idRutaM": "2",
+      "fechaInicio": "27-11-2024",
+      "fechaFin": "27-11-2024",
+      "idSalaM": "3"
+   },
+   "5": {
+      "idTrainerM": "1",
+      "idRutaM": "2",
+      "fechaInicio": "78",
+      "fechaFin": "78",
+      "idSalaM": "3"
+   }
+}

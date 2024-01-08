@@ -1,1 +1,75 @@
-{}
+{
+   "1": {
+      "nombreC": "Ronald",
+      "apellidos": "Moreno",
+      "direccion": "Floridablanca",
+      "acudiente": "Martha",
+      "estado": "aprobado",
+      "telefono": {
+         "celular": [
+            "1234",
+            "842"
+         ],
+         "fijo": [
+            "74123"
+         ]
+      },
+      "haveRuta": "si"
+   },
+   "2": {
+      "nombreC": "Maicol",
+      "apellidos": "Cucuta",
+      "direccion": "Cucuta",
+      "acudiente": "Maritza",
+      "estado": "aprobado",
+      "telefono": {
+         "celular": [
+            "1236"
+         ],
+         "fijo": []
+      },
+      "haveRuta": "si"
+   },
+   "3": {
+      "nombreC": "Isabella",
+      "apellidos": "Cardenas",
+      "direccion": "Giron",
+      "acudiente": "Pepito",
+      "estado": "aprobado",
+      "telefono": {
+         "celular": [],
+         "fijo": [
+            "12360"
+         ]
+      },
+      "haveRuta": "si"
+   },
+   "4": {
+      "nombreC": "Felipe",
+      "apellidos": "Rubio",
+      "direccion": "Giron",
+      "acudiente": "el papa",
+      "estado": "inscrito",
+      "telefono": {
+         "celular": [
+            "1236"
+         ],
+         "fijo": []
+      },
+      "haveRuta": "si"
+   },
+   "5": {
+      "nombreC": "Alirio",
+      "apellidos": "marin",
+      "direccion": "Socorro",
+      "acudiente": "nadie",
+      "estado": "aprobado",
+      "telefono": {
+         "celular": [],
+         "fijo": [
+            "4587"
+         ]
+      },
+      "haveRuta": "si"
+   }
+}

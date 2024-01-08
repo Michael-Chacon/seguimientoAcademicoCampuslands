@@ -1,1 +1,27 @@
-{}
+{
+   "1": {
+      "teorica": 65.0,
+      "practica": 78.0,
+      "promedio": 71.5
+   },
+   "2": {
+      "teorica": 80.0,
+      "practica": 74.0,
+      "promedio": 77.0
+   },
+   "3": {
+      "teorica": 85.0,
+      "practica": 95.0,
+      "promedio": 90.0
+   },
+   "4": {
+      "teorica": 80.0,
+      "practica": 74.0,
+      "promedio": 77.0
+   },
+   "5": {
+      "teorica": 90.0,
+      "practica": 90.0,
+      "promedio": 90.0
+   }
+}

@@ -77,7 +77,6 @@ def matricularCamper():
                 print("Seleccione el ID de la ruta que le va a asigar al camper: ")
                 # onden en el que se muestran los datos: id (0) - id de la ruta(1) - id del horario(2) array de str
                 rutasHorarios = trainerRutasHorarios(idTrainer)
-                print(rutasHorarios)
                 bandera = True
                 while bandera:
                     try:
