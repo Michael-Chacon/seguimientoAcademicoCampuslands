@@ -1,3 +1,4 @@
+import os
 from conexiones import conexion
 from notas import estudiantePruebaAdmision as promedio, obtenerModulosDeRutasNoTabla
 from validaciones import romperCiclo
@@ -7,13 +8,16 @@ rutas = conexion('rutas')
 
 
 def campersInscritos():
+    os.system('clear')
     print("\n\t***********************")
     print("\t*  CAMPERS INSCRITOS  *")
     print("\t***********************\n")
     busquedaConFiltro('inscrito', 'no')
+    salir = input("Enter para salir")
 
 
 def mostrarNotasAspirante():
+    os.system('clear')
     print("\n\t*********************************************")
     print("\t*  CAMPERS QUE APROBARON EL EXAMEN INICIAL  *")
     print("\t*********************************************\n")
@@ -26,18 +30,21 @@ def mostrarNotasAspirante():
             notas = promedio(llave)
             print(f"| {llave} \t| {valor['nombreC']} \t| {valor['apellidos']} \t| {notas[2]}")
             print(80 * "-")
-
+    salir = input("Enter para salir")
 
 def trainesCampus():
+    os.system('clear')
     print("\n\t***********************************************")
     print("\t*   ENTRENADORES QUE TRABAJAN EN CAMPUSLANDS  *")
     print("\t***********************************************\n")
 
     trainers = conexion('trainers')
     mostrarInfoBasica(trainers, 'nombreT')
+    salir = input("Enter para salir")
 
 
 def campersReprovados():
+    os.system('clear')
     print("\n\t***********************************")
     print("\t*   CAMPERS CON BAJO RENDIMIENTO  *")
     print("\t***********************************\n")
@@ -50,11 +57,14 @@ def campersReprovados():
             data = rutaTreinerHorario(llave)
             print(f"| {llave} \t| {valor['nombreC']} \t| {valor['apellidos']} \t| {data[0]} \t| {data[1]} ")
             print(80 * "-")
+    salir = input("Enter para salir")
 
 
 def rutaCamperTrainer():
+    os.system('clear')
     bandera = True
     while bandera:
+        os.system('clear')
         print("\n******************************************************")
         print("*   CAMPERS Y ENTRENADORES QUE PERTENECEN A UNA RUTA  *")
         print("******************************************************\n")
@@ -64,15 +74,16 @@ def rutaCamperTrainer():
         if idRuta not in rutas:
             print(f"*** Error - el id {idRuta} no pertenece a ninguna ruta")
         else:
+            os.system('clear')
             print("\n\t***************************")
             print(f"\t\t{rutas[idRuta]['nombreR']}  ")
             print("\t***************************\n")
 
-            print(f"Trainer: {obtenerNombreTrainer(idRuta)}")
-
-            print(100 * "-")
+            print(f"Trainer: {obtenerNombreTrainer(idRuta)}\n")
+            print("Listado de Campers: ")
+            print(80 * "-")
             print("| ID \t| NOMBRE \t| APELLIDOS")
-            print(100 * "-")
+            print(80 * "-")
             for llave, valor in campers.items():
                 if valor['estado'] == 'aprobado' and valor['haveRuta'] == 'si':
                     if camperPerteneceARuta(llave, idRuta):
@@ -82,6 +93,7 @@ def rutaCamperTrainer():
 
 
 def filtrosXRuta():
+    os.system('clear')
     print("\n******************************************************")
     print("*   CAMPERS Y ENTRENADORES QUE PERTENECEN A UNA RUTA  *")
     print("******************************************************\n")
@@ -91,6 +103,7 @@ def filtrosXRuta():
     if idRuta not in rutas:
         print(f"*** Error - el id {idRuta} no pertenece a ninguna ruta")
     else:
+        os.system('clear')
         print("\n\t***************************")
         print(f"\t\t{rutas[idRuta]['nombreR']}  ")
         print("\t***************************\n")
@@ -102,3 +115,4 @@ def filtrosXRuta():
         obtenerModulosDeRutasNoTabla(idRuta, 'programacion formal')
         obtenerModulosDeRutasNoTabla(idRuta, 'bases de datos')
         obtenerModulosDeRutasNoTabla(idRuta, 'backend')
+        salir = input("Enter para salir")

@@ -33,5 +33,25 @@
       "teorica": 100.0,
       "practica": 95.0,
       "promedio": 97.5
+   },
+   "88": {
+      "teorica": 50.0,
+      "practica": 4.0,
+      "promedio": 27.0
+   },
+   "3": {
+      "teorica": 60.0,
+      "practica": 71.0,
+      "promedio": 65.5
+   },
+   "d1": {
+      "teorica": 80.0,
+      "practica": 80.0,
+      "promedio": 80.0
+   },
+   "a1": {
+      "teorica": 81.0,
+      "practica": 74.0,
+      "promedio": 77.5
    }
 }

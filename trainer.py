@@ -40,6 +40,8 @@ def mostrarInfoBasica():
 def guardarRutaTrainer():
     bandera = True
     while bandera:
+        os.system('clear')
+        print("Listado de trainers: ")
         mostrarInfoBasica()
         idTrainer = input('Escriba el id del treiner al que le va a asignar la ruta: ')
         if idTrainer not in  trainers:
@@ -67,6 +69,7 @@ def guardarRutaTrainer():
                         rutaTrainers[idTrainer]['idHorario'].append(hora)
                         rutaTrainers[idTrainer]['idRutaRT'].append(idRuta)
                         guardarEnJson('rutaTrainers', rutaTrainers)
+                        print("\n----- Ruta asignada con éxito -----\n")
         bandera = romperCiclo('otra ruta a otro trainer')
 
 

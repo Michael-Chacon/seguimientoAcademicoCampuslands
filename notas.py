@@ -8,35 +8,41 @@ from utils import mostrarCampersConFiltro as mostrarCampers, mostrarInfoBasica, 
 
 notasPruebas = conexion('pruebas') # Obtener el diccionario con todas las notas
 
-def guardarNotasPrueba(campers):
-    os.system('clear')
-    mostrarCampers('inscrito', 'no')
-    idAspirante = 0
-    try:
-        idAspirante = input('Ingrese el id del camper: ')
-        # hayId(idAspirante, campers)
-    except:
-        print(f"El id {idAspirante} no es valido")
-    else:
-        if(not hayId(idAspirante, campers)):
-            print(f"No existe un camper con el id {idAspirante}")
+def guardarNotasPrueba():
+    campers = conexion('campers')
+    bandera = True
+    while bandera:
+        os.system('clear')
+        print("\nCampers que no han presentado la prueba:")
+        mostrarCampers('inscrito', 'no')
+        idAspirante = 0
+        try:
+            idAspirante = input('Ingrese el id del camper: ')
+            # hayId(idAspirante, campers)
+        except:
+            print(f"El id {idAspirante} no es valido")
         else:
-            if hayId(idAspirante, notasPruebas):
-                print(f"{campers[idAspirante]['nombreC']} ya realizo las pruebas")
+            if(not hayId(idAspirante, campers)):
+                print(f"No existe un camper con el id {idAspirante}")
             else:
-                teorica = float(input('Nota de la prueba teorica: '))
-                practica = float(input('Nota de la prueba practica: '))
-                promedio = (teorica + practica) / 2
+                if hayId(idAspirante, notasPruebas):
+                    print(f"{campers[idAspirante]['nombreC']} ya realizo las pruebas")
+                else:
+                    teorica = float(input('Nota de la prueba teorica: '))
+                    practica = float(input('Nota de la prueba practica: '))
+                    promedio = (teorica + practica) / 2
 
-                if promedio >= 60:
-                    campers[idAspirante]['estado'] = 'aprobado'
-                elif promedio < 60:
-                    campers[idAspirante]['estado'] = 'reprobado'
+                    if promedio >= 60:
+                        campers[idAspirante]['estado'] = 'aprobado'
+                    elif promedio < 60:
+                        campers[idAspirante]['estado'] = 'reprobado'
 
-                notasPruebas[idAspirante] = {'teorica': teorica, 'practica': practica, 'promedio': promedio}
+                    notasPruebas[idAspirante] = {'teorica': teorica, 'practica': practica, 'promedio': promedio}
 
-                guardar('pruebas', notasPruebas)
-                guardar('campers', campers)
+                    guardar('pruebas', notasPruebas)
+                    guardar('campers', campers)
+                    print("\n----- Prueba registrada con éxito -----\n")
+        bandera = romperCiclo("registrar la prueba de inicio a otro camper")
 
 
 # Ver las notas de los aspirantes

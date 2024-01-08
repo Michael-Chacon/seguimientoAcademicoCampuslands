@@ -22,7 +22,7 @@
       "apellidos": "Diaz",
       "direccion": "Floridablanca",
       "acudiente": "el pap\u00e1",
-      "estado": "inscrito",
+      "estado": "aprobado",
       "telefono": {
          "celular": [
             "123",
@@ -73,7 +73,7 @@
       "apellidos": "Corredor",
       "direccion": "Floridablanca",
       "acudiente": "la mam\u00e1",
-      "estado": "inscrito",
+      "estado": "aprobado",
       "telefono": {
          "celular": [
             "123"
@@ -90,7 +90,7 @@
       "apellidos": "lands",
       "direccion": "sona franca",
       "acudiente": "ing. Andres",
-      "estado": "inscrito",
+      "estado": "aprobado",
       "telefono": {
          "celular": [
             "123456"
@@ -106,7 +106,7 @@
       "apellidos": "tal otro",
       "direccion": "florida",
       "acudiente": "taltal",
-      "estado": "inscrito",
+      "estado": "reprobado",
       "telefono": {
          "celular": [
             "1236"
@@ -166,7 +166,7 @@
       "apellidos": "Modrid",
       "direccion": "Croacia",
       "acudiente": "el pap\u00e1",
-      "estado": "aprobado",
+      "estado": "reprobado",
       "telefono": {
          "celular": [],
          "fijo": [
