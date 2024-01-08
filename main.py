@@ -45,4 +45,5 @@ print("Hola, bienvenidos al programa que permite llevar el seguimiento académic
 #INFORMES
 # campersInscritos()
 # mostrarNotasAspirante()
-trainesCampus()
+# trainesCampus()
+campersReprovados()

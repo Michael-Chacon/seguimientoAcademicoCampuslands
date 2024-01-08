@@ -48,3 +48,23 @@ def seleccionarModulo(opcion):
         return 'bases de datos'
     elif opcion == '5':
         return 'backend'
+    
+
+def rutaTreinerHorario(idCamper):
+    matriculas = con('matriculas')
+    idTrainer = matriculas[idCamper]['idTrainerM']
+    idRuta = matriculas[idCamper]['idRutaM']
+    trainer = retornarNombreTrainer(idTrainer)
+    ruta = retornarNombreRuta(idRuta)
+    return [trainer, ruta]
+
+
+def retornarNombreTrainer(idTrainer):
+    trainers = con('trainers')
+    return trainers[idTrainer]['nombreT']
+
+
+def retornarNombreRuta(idRuta):
+    rutas = con('rutas')
+    return rutas[idRuta]['nombreR']
+

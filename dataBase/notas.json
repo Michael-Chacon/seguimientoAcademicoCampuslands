@@ -14,5 +14,13 @@
       "programacion formal": 0,
       "bases de datos": 0,
       "backend": 0
+   },
+   "01": {
+      "idRutaN": "3",
+      "fundamentos": 66.47,
+      "programacion web": 33.0,
+      "programacion formal": 0,
+      "bases de datos": 51.4,
+      "backend": 0
    }
 }

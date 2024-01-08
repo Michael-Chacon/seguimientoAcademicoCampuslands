@@ -122,7 +122,7 @@
       "apellidos": "podolsky",
       "direccion": "ocamonte",
       "acudiente": "Alexis",
-      "estado": "aprobado",
+      "estado": "reprobado",
       "telefono": {
          "celular": [
             "000000"
@@ -132,8 +132,8 @@
       "haveRuta": "si"
    },
    "02": {
-      "nombreC": "Tony",
-      "apellidos": "Tal",
+      "nombreC": "mariaaa",
+      "apellidos": "Castillo",
       "direccion": "Ocamonte",
       "acudiente": "Miguel",
       "estado": "reprobado",
