@@ -75,7 +75,7 @@ def trainerRutasHorarios(id):
     print("\tID") # onden en el que se muestran los datos: id - id de la ruta - id del horario
     for i in range(0,len(rutaTrainers[id]['idHorario'])):
         print(f"\t{i}: {buscarDatosRuta(rutaTrainers[id]['idRutaRT'][i])} | {buscarDatosHora(rutaTrainers[id]['idHorario'][i])}")
-        arrayTemporal = [i+1,  rutaTrainers[id]['idRutaRT'][i], rutaTrainers[id]['idHorario'][i]]
+        arrayTemporal = [i+1, rutaTrainers[id]['idRutaRT'][i], rutaTrainers[id]['idHorario'][i]]
         listaRutas.append(arrayTemporal)
     return listaRutas
 

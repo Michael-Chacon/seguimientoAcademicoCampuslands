@@ -12,5 +12,12 @@
       "fechaInicio": "2-3-2024",
       "fechaFin": "2-3-2024",
       "idSalaM": "2"
+   },
+   "2": {
+      "idTrainerM": "666",
+      "idRutaM": "100",
+      "fechaInicio": "21-12-2024",
+      "fechaFin": "21-12-2024",
+      "idSalaM": "1"
    }
 }

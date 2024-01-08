@@ -16,5 +16,7 @@ def romperCiclo(mensaje):
 
 def cuposEnHorario(idHorario):
     horarios = conexion('horarios')
-    if horarios[idHorario]['disponible'] == 0: return False
-    else: return True
+    if horarios[idHorario]['disponible'] == 0: 
+        return False
+    else: 
+        return True

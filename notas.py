@@ -4,7 +4,7 @@ from camper import registrarAsigancionRuta
 from conexiones import guardar, conexion
 from trainer import trainerRutasHorarios
 from validaciones import existeElId as hayId,  cuposEnHorario, romperCiclo
-from utils import mostrarCampersConFiltro as mostrarCampers, mostrarInfoBasica, restarCupoAHorario
+from utils import mostrarCampersConFiltro as mostrarCampers, mostrarInfoBasica, restarCupoAHorario, seleccionarModulo
 
 notasPruebas = conexion('pruebas') # Obtener el diccionario con todas las notas
 
@@ -69,7 +69,7 @@ def matricularCamper():
                 print(f"Error - no existe ningun trainer con el id {id}")
             else:
                 print("Seleccione el ID de la ruta que le va a asigar al camper: ")
-                # onden en el que se muestran los datos: id (0) - id de la ruta(1) - id del horario(2)
+                # onden en el que se muestran los datos: id (0) - id de la ruta(1) - id del horario(2) array de str
                 rutasHorarios = trainerRutasHorarios(idTrainer)
                 print(rutasHorarios)
                 bandera = True
@@ -89,8 +89,8 @@ def matricularCamper():
                     fechaInicio = input('Ingrese la fecha de inicio con el formato d-m-a: ')
                     fechaInicio = input('Ingrese la fecha de finalización con el formato d-m-a: ')
                     # obtener el id de la sala pero del json de rutas.
-                    idSale = retornarIdSala(rutasHorarios[rutaSeleccionada][1])
-                    matriculas[idCamper] = {'idTrainerM': idTrainer, "idRutaM": rutasHorarios[rutaSeleccionada][1], "fechaInicio": fechaInicio, "fechaFin": fechaInicio, "idSalaM": idSale}
+                    idSala = retornarIdSala(rutasHorarios[rutaSeleccionada][1])
+                    matriculas[idCamper] = {'idTrainerM': idTrainer, "idRutaM": rutasHorarios[rutaSeleccionada][1], "fechaInicio": fechaInicio, "fechaFin": fechaInicio, "idSalaM": idSala}
                     guardar('matriculas', matriculas)
                     registrarAsigancionRuta(idCamper)
                     restarCupoAHorario(rutasHorarios[rutaSeleccionada][2])
@@ -103,9 +103,98 @@ def matricularCamper():
 
 def filtro():
     campers = conexion('campers')
+    rutas = conexion('rutas')
 
     print(f"\nListado de campers con estado aprobado:")
     mostrarCampers('aprobado', 'si')
     camper = input("Seleccine el id del camper al que le va a asiganar la nota del filtro: ")
     if camper not in campers:
         print(f"Error - el id {camper} no esta asignado a ningun camper")
+    else:
+        os.system('clear')
+        matriculas = conexion('matriculas')
+        idRuta = matriculas[camper]['idRutaM']
+        print(f"\n--- El camper {campers[camper]['nombreC']} está matriculado en la ruta {rutas[idRuta]['nombreR']} ---\n")
+        print(f"Veamos los módulos de la ruta {rutas[idRuta]['nombreR']} en los que el camper tiene que presentar el filtro")
+        
+        print("\n\t", 40 * '*')
+        print("\t * (1)\t FUNDAMENTOS DE PROGRAMACIÓN")
+        obtenerModulosDeRutas(idRuta, 'fundamentos')
+
+        print("\n\t", 40 * '*')
+        print("\t * (2)\t PROGRAMACIÓN WEB")
+        obtenerModulosDeRutas(idRuta, 'programacion web')
+
+        print("\n\t", 40 * '*')
+        print("\t * (3)\t PROGRAMACIÓN FORMAL")
+        obtenerModulosDeRutas(idRuta, 'programacion formal')
+
+        print("\n\t", 40 * '*')
+        print("\t * (4)\t BASES DE DATOS")
+        obtenerModulosDeRutas(idRuta, 'bases de datos')
+
+        print("\n\t", 40 * '*')
+        print("\t * (5)\t BACKEND")
+        obtenerModulosDeRutas(idRuta, 'backend')
+
+        idModulo = input("\nSeleccione el id modulo que va a evaluar, [el id esta entre corchete en el titulo de cada modulo]: ")
+        moduloSelec = seleccionarModulo(idModulo)
+
+        print(f"\n---------- Vas a calificar el módulo {moduloSelec.upper()} a {campers[camper]['nombreC']} ----------\n")
+        print("Recordemos las pruebas y sus valores")
+        print("--------------------")
+        print("|VALOR | PRUEBA    |")
+        print("--------------------")
+        print("| 60%  | Practica  |")
+        print("--------------------")
+        print("| 30%  | Téorica   |")
+        print("--------------------")
+        print("| 10%  | Trabajos  |")
+        print("--------------------")
+
+        
+        while True:
+            try:
+                practica = float(input("Ingresa la nota obtenida en la prueba practica: "))
+            except Exception:
+                print("El dato ingresado no es valido, ingrese la nota correctamente")
+            else:
+                break
+            
+        while True:
+            try:
+                teorica = float(input("Ingresa la nota obtenida en la prueba téorica: "))
+            except Exception:
+                print("El dato ingresado no es valido, ingrese la nota correctamente")
+            else:
+                break
+        
+        banderaQ = True
+        trabajos = []
+        while banderaQ:
+            try:
+                nota = float(input("Ingrese la nota del trabajo o quiz: "))
+            except Exception:
+                print("El dato ingresado no es valido, ingrese la nota correctamente")
+            trabajos.append(nota)
+            banderaQ = romperCiclo("otro nota")
+
+        
+        totalTrabajos = sum(trabajos) / len(trabajos)
+
+        definitiva =  (totalTrabajos * 0.1) + (teorica * 0.3) + (practica * 0.6)
+
+
+
+def obtenerModulosDeRutas(idRuta, modulo):
+    temarioRuta = conexion('temarioRuta')
+    modulos = temarioRuta[idRuta][modulo]
+    contador = 0
+    print("\t", 40 * '*')
+    print("\t|# \t| \tTEMAS")
+    print("\t", 40 * '-')
+    for i in modulos:
+        contador += 1
+        print(f"\t|{contador} \t|{i}")
+        print("\t", 40 * '-')
+        

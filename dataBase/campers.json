@@ -15,7 +15,7 @@
       "direccion": "Pasto",
       "telefono": 1234560,
       "estado": "aprobado",
-      "haveRuta": "no"
+      "haveRuta": "si"
    },
    "3": {
       "nombreC": "Nelson",

@@ -36,3 +36,15 @@ def seleccionarSgbd(opcion):
         return 'MongoDb'
     elif opcion == 3:
         return 'Postgresql'
+    
+def seleccionarModulo(opcion):
+    if opcion == '1':
+        return 'fundamentos'
+    elif opcion == '2':
+        return 'programacion web'
+    elif opcion == '3':
+        return 'programacion formal'
+    elif opcion == '4':
+        return 'bases de datos'
+    elif opcion == '5':
+        return 'backend'

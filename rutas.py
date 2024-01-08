@@ -5,7 +5,7 @@ from conexiones import conexion, guardar
 
 def retornarIdSala(idRuta):
     rutas = conexion('rutas')
-    return rutas[idRuta]['idSalaR']
+    return rutas[idRuta]['idsalaR']
 
 
 def guardarRuta():
@@ -22,7 +22,7 @@ def guardarRuta():
             print(f"\n*** Error - el id {idRuta} ya esta asignado a la ruta {rutas[idRuta]['nombreR']} ***\n")
         else:
             nombre = input("Nombre de la ruta (ejm: Java): ")
-            print("***** SGBD *****")
+            print("\n***** SGBD *****")
             db = []
             print("Selecciona 2 sistemas gestores de bases de datos (ejm: 12):\n\t1: Mysql\n\t2: MongoDb\n\t3: Postgresql\n")
             for i in range(0,2):
@@ -36,13 +36,12 @@ def guardarRuta():
                     db.append(seleccionarSgbd(alternativo))
 
             banderaHija = True
-            print("***** BACKEND *****")
+            print("\n***** BACKEND *****")
             backend = []
             
             while banderaHija:
                 back = input("Ingrese el framework que que se verá en la ruta: ")
                 backend.append(back)
-                print("tallllll")
                 banderaHija = romperCiclo('otro framework al temario backend')
             temarioRuta[idRuta] = {'fundamentos': ["Introducción a la algoritmia", " PSeInt", "Python", "Git y gitHub"], "programacion Web": ["HTML", " CSS", "Tailwind"],"programacion formal": [nombre], "bases de datos": db, "backend": backend}
             guardar('temarioRuta', temarioRuta)
