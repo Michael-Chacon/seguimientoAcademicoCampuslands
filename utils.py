@@ -116,7 +116,7 @@ def contarCampers(modulo, idRuta):
     perdieron = 0
     aprobaron = 0
     for llave, valor in campers.items():
-        if valor['estado'] == 'aprobado' and valor['haveRuta'] == 'si':
+        if valor['haveRuta'] == 'si':
             if camperPerteneceARuta(llave, idRuta):
                 if notas[llave][modulo] > 60:
                     aprobaron += 1

@@ -35,7 +35,7 @@
       "apellidos": "Cardenas",
       "direccion": "Giron",
       "acudiente": "Pepito",
-      "estado": "aprobado",
+      "estado": "reprobado",
       "telefono": {
          "celular": [],
          "fijo": [
@@ -49,7 +49,7 @@
       "apellidos": "Rubio",
       "direccion": "Giron",
       "acudiente": "el papa",
-      "estado": "inscrito",
+      "estado": "aprobado",
       "telefono": {
          "celular": [
             "1236"
