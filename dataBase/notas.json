@@ -1,10 +1,18 @@
 {
-    "camper": {
-        "idRutaN": 0,
-        "fundamentos": 0,
-        "programacion web": 0,
-        "programacion formal": 0,
-        "bases de datos": 0,
-        "backend": 0
-    }
+   "camper": {
+      "idRutaN": "3",
+      "fundamentos": 0,
+      "programacion web": 0,
+      "programacion formal": 0,
+      "bases de datos": 0,
+      "backend": 0
+   },
+   "02": {
+      "idRutaN": "1",
+      "fundamentos": 66.47,
+      "programacion web": 33.0,
+      "programacion formal": 0,
+      "bases de datos": 0,
+      "backend": 0
+   }
 }

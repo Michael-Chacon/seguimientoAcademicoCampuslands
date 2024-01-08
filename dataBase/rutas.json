@@ -1,15 +1,15 @@
 {
    "1": {
       "nombreR": "NodeJS",
-      "idSalaR": "2"
+      "idsalaR": "2"
    },
    "2": {
       "nombreR": "Java",
-      "idSalaR": "3"
+      "idsalaR": "3"
    },
    "3": {
       "nombreR": "NetCore",
-      "idSalaR": "1"
+      "idsalaR": "1"
    },
    "4": {
       "nombreR": "PHP",

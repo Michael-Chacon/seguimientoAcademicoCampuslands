@@ -95,8 +95,15 @@ def matricularCamper():
                     registrarAsigancionRuta(idCamper)
                     restarCupoAHorario(rutasHorarios[rutaSeleccionada][2])
                     print("--- Camper matriculado con éxito ---")
+                    idRuta = rutasHorarios[rutaSeleccionada][1]
+
+                    # Inicializar el objeto con el id del camper y la ruta, los modulos en 0 
+                    notas = conexion('notas')
+                    notas[idCamper] = {"idRutaN": idRuta, "fundamentos": 0, "programacion web": 0, "programacion formal": 0, "bases de datos": 0, "backend": 0}
+                    guardar('notas', notas)
                 else:
                     print("*** Alerta - el horario seleccionado no tiene cupos disponibles, el camper no puede ser matriculdo en este horario ***")
+            
             banderaMain = romperCiclo('matricular otro camper')
             os.system('clear')
 
@@ -104,87 +111,103 @@ def matricularCamper():
 def filtro():
     campers = conexion('campers')
     rutas = conexion('rutas')
-
-    print(f"\nListado de campers con estado aprobado:")
-    mostrarCampers('aprobado', 'si')
-    camper = input("Seleccine el id del camper al que le va a asiganar la nota del filtro: ")
-    if camper not in campers:
-        print(f"Error - el id {camper} no esta asignado a ningun camper")
-    else:
-        os.system('clear')
-        matriculas = conexion('matriculas')
-        idRuta = matriculas[camper]['idRutaM']
-        print(f"\n--- El camper {campers[camper]['nombreC']} está matriculado en la ruta {rutas[idRuta]['nombreR']} ---\n")
-        print(f"Veamos los módulos de la ruta {rutas[idRuta]['nombreR']} en los que el camper tiene que presentar el filtro")
-        
-        print("\n\t", 40 * '*')
-        print("\t * (1)\t FUNDAMENTOS DE PROGRAMACIÓN")
-        obtenerModulosDeRutas(idRuta, 'fundamentos')
-
-        print("\n\t", 40 * '*')
-        print("\t * (2)\t PROGRAMACIÓN WEB")
-        obtenerModulosDeRutas(idRuta, 'programacion web')
-
-        print("\n\t", 40 * '*')
-        print("\t * (3)\t PROGRAMACIÓN FORMAL")
-        obtenerModulosDeRutas(idRuta, 'programacion formal')
-
-        print("\n\t", 40 * '*')
-        print("\t * (4)\t BASES DE DATOS")
-        obtenerModulosDeRutas(idRuta, 'bases de datos')
-
-        print("\n\t", 40 * '*')
-        print("\t * (5)\t BACKEND")
-        obtenerModulosDeRutas(idRuta, 'backend')
-
-        idModulo = input("\nSeleccione el id modulo que va a evaluar, [el id esta entre corchete en el titulo de cada modulo]: ")
-        moduloSelec = seleccionarModulo(idModulo)
-
-        print(f"\n---------- Vas a calificar el módulo {moduloSelec.upper()} a {campers[camper]['nombreC']} ----------\n")
-        print("Recordemos las pruebas y sus valores")
-        print("--------------------")
-        print("|VALOR | PRUEBA    |")
-        print("--------------------")
-        print("| 60%  | Practica  |")
-        print("--------------------")
-        print("| 30%  | Téorica   |")
-        print("--------------------")
-        print("| 10%  | Trabajos  |")
-        print("--------------------")
-
-        
-        while True:
-            try:
-                practica = float(input("Ingresa la nota obtenida en la prueba practica: "))
-            except Exception:
-                print("El dato ingresado no es valido, ingrese la nota correctamente")
-            else:
-                break
+    notas = conexion('notas')
+    main = True
+    while main:    
+        print(f"\nListado de campers con estado aprobado:")
+        mostrarCampers('aprobado', 'si')
+        camper = input("Seleccine el id del camper al que le va a asiganar la nota del filtro: ")
+        if camper not in campers:
+            print(f"Error - el id {camper} no esta asignado a ningun camper")
+        else:
+            os.system('clear')
+            matriculas = conexion('matriculas')
+            idRuta = matriculas[camper]['idRutaM']
+            print(f"\n--- El camper {campers[camper]['nombreC']} está matriculado en la ruta {rutas[idRuta]['nombreR']} ---\n")
+            print(f"Veamos los módulos de la ruta {rutas[idRuta]['nombreR']} en los que el camper tiene que presentar el filtro")
             
-        while True:
-            try:
-                teorica = float(input("Ingresa la nota obtenida en la prueba téorica: "))
-            except Exception:
-                print("El dato ingresado no es valido, ingrese la nota correctamente")
-            else:
-                break
+            print("\n\t", 40 * '*')
+            print("\t * (1)\t FUNDAMENTOS DE PROGRAMACIÓN")
+            obtenerModulosDeRutas(idRuta, 'fundamentos')
+
+            print("\n\t", 40 * '*')
+            print("\t * (2)\t PROGRAMACIÓN WEB")
+            obtenerModulosDeRutas(idRuta, 'programacion web')
+
+            print("\n\t", 40 * '*')
+            print("\t * (3)\t PROGRAMACIÓN FORMAL")
+            obtenerModulosDeRutas(idRuta, 'programacion formal')
+
+            print("\n\t", 40 * '*')
+            print("\t * (4)\t BASES DE DATOS")
+            obtenerModulosDeRutas(idRuta, 'bases de datos')
+
+            print("\n\t", 40 * '*')
+            print("\t * (5)\t BACKEND")
+            obtenerModulosDeRutas(idRuta, 'backend')
+
+            while True:
+                try:
+                    idModulo = input("\nSeleccione el id modulo que va a evaluar, [el id esta entre corchete en el titulo de cada modulo]: ")
+                    if int(idModulo) > 5 and int(idModulo <= 0):
+                        print(f"Error - No existe un módulo con el id {idModulo}, ingrese un id correcto")
+                except Exception:
+                    print("\n*** Error - ingrese un id correcto ***\n")
+                else:
+                    break
+
+            moduloSelec = seleccionarModulo(idModulo)
+
+            print(f"\n---------- Vas a calificar el módulo {moduloSelec.upper()} a {campers[camper]['nombreC']} ----------\n")
+            print("Recordemos las pruebas y sus valores")
+            print("--------------------")
+            print("|VALOR | PRUEBA    |")
+            print("--------------------")
+            print("| 60%  | Practica  |")
+            print("--------------------")
+            print("| 30%  | Téorica   |")
+            print("--------------------")
+            print("| 10%  | Trabajos  |")
+            print("--------------------")
+
+            
+            while True:
+                try:
+                    practica = float(input("Ingresa la nota obtenida en la prueba practica: "))
+                except Exception:
+                    print("El dato ingresado no es valido, ingrese la nota correctamente")
+                else:
+                    break
+                
+            while True:
+                try:
+                    teorica = float(input("Ingresa la nota obtenida en la prueba téorica: "))
+                except Exception:
+                    print("El dato ingresado no es valido, ingrese la nota correctamente")
+                else:
+                    break
+            
+            banderaQ = True
+            trabajos = []
+            while banderaQ:
+                try:
+                    nota = float(input("Ingrese la nota del trabajo o quiz: "))
+                except Exception:
+                    print("El dato ingresado no es valido, ingrese la nota correctamente")
+                trabajos.append(nota)
+                banderaQ = romperCiclo("otro nota")
+
+            totalTrabajos = sum(trabajos) / len(trabajos)
+            definitiva =  round((totalTrabajos * 0.1) + (teorica * 0.3) + (practica * 0.6), 2)
+            notas[camper][moduloSelec] = definitiva
+            guardar('notas', notas)
+            if definitiva <= 60:
+                campers[camper]['estado'] = 'reprobado'
+                guardar('campers', campers)
+            print("\n----- Nota registrada con exito -----\n")
+            main = romperCiclo("la calificacion de un filtro a otro camper")
         
-        banderaQ = True
-        trabajos = []
-        while banderaQ:
-            try:
-                nota = float(input("Ingrese la nota del trabajo o quiz: "))
-            except Exception:
-                print("El dato ingresado no es valido, ingrese la nota correctamente")
-            trabajos.append(nota)
-            banderaQ = romperCiclo("otro nota")
-
         
-        totalTrabajos = sum(trabajos) / len(trabajos)
-
-        definitiva =  (totalTrabajos * 0.1) + (teorica * 0.3) + (practica * 0.6)
-
-
 
 def obtenerModulosDeRutas(idRuta, modulo):
     temarioRuta = conexion('temarioRuta')

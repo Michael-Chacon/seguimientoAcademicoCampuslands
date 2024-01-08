@@ -19,5 +19,19 @@
       "fechaInicio": "21-12-2024",
       "fechaFin": "21-12-2024",
       "idSalaM": "1"
+   },
+   "01": {
+      "idTrainerM": "1",
+      "idRutaM": "3",
+      "fechaInicio": "25",
+      "fechaFin": "25",
+      "idSalaM": "1"
+   },
+   "02": {
+      "idTrainerM": "1",
+      "idRutaM": "1",
+      "fechaInicio": "457",
+      "fechaFin": "457",
+      "idSalaM": "2"
    }
 }

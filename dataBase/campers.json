@@ -116,5 +116,35 @@
          ]
       },
       "haveRuta": "no"
+   },
+   "01": {
+      "nombreC": "lukas",
+      "apellidos": "podolsky",
+      "direccion": "ocamonte",
+      "acudiente": "Alexis",
+      "estado": "aprobado",
+      "telefono": {
+         "celular": [
+            "000000"
+         ],
+         "fijo": []
+      },
+      "haveRuta": "si"
+   },
+   "02": {
+      "nombreC": "Tony",
+      "apellidos": "Tal",
+      "direccion": "Ocamonte",
+      "acudiente": "Miguel",
+      "estado": "reprobado",
+      "telefono": {
+         "celular": [
+            "753"
+         ],
+         "fijo": [
+            "951"
+         ]
+      },
+      "haveRuta": "si"
    }
 }
