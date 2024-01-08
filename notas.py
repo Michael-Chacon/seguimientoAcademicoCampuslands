@@ -4,7 +4,7 @@ from camper import registrarAsigancionRuta
 from conexiones import guardar, conexion
 from trainer import trainerRutasHorarios
 from validaciones import existeElId as hayId,  cuposEnHorario, romperCiclo
-from utils import mostrarCampersConFiltro as mostrarCampers, mostrarInfoBasica, restarCupoAHorario, seleccionarModulo
+from utils import mostrarCampersConFiltro as mostrarCampers, mostrarInfoBasica, restarCupoAHorario, seleccionarModulo, contarCampers
 
 notasPruebas = conexion('pruebas') # Obtener el diccionario con todas las notas
 
@@ -220,4 +220,29 @@ def obtenerModulosDeRutas(idRuta, modulo):
         contador += 1
         print(f"\t|{contador} \t|{i}")
         print("\t", 40 * '-')
+
+
+def obtenerModulosDeRutasNoTabla(idRuta, modulo):
+    temarioRuta = conexion('temarioRuta')
+    modulos = temarioRuta[idRuta][modulo]
+    print(modulo.upper())
+    for i in modulos:
+        print(f" \t- {i}")
+    
+    resultado = contarCampers(modulo, idRuta)
+    if resultado[0] == 0 and resultado[1] == 0:
+        print("----------------------------------------")
+        print("|Ningun camper a presentado este filtro|")
+        print("----------------------------------------\n")
+        print(50 * "*")
+    else:
+        print("---------------------------------")
+        print("|Perdieron\t|Aprobaron\t|")
+        print("---------------------------------")
+        print(f"|\t{resultado[0]}\t|\t{resultado[1]}\t|")
+        print("---------------------------------")
+        print(50 * "*")
+        print("\n")
+
+
         

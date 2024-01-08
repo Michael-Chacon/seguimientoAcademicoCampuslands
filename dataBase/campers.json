@@ -146,5 +146,33 @@
          ]
       },
       "haveRuta": "si"
+   },
+   "07": {
+      "nombreC": "Cristiano",
+      "apellidos": "Ronaldo",
+      "direccion": "Portugal",
+      "acudiente": "la mam\u00e1",
+      "estado": "aprobado",
+      "telefono": {
+         "celular": [
+            "123654789"
+         ],
+         "fijo": []
+      },
+      "haveRuta": "si"
+   },
+   "10": {
+      "nombreC": "Lukas",
+      "apellidos": "Modrid",
+      "direccion": "Croacia",
+      "acudiente": "el pap\u00e1",
+      "estado": "aprobado",
+      "telefono": {
+         "celular": [],
+         "fijo": [
+            "123456"
+         ]
+      },
+      "haveRuta": "si"
    }
 }

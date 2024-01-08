@@ -18,7 +18,8 @@ def guardar():
             print(f"\n*** Error - el trainer {trainers[id]['nombreT']} ya tiene asigando el id {id} ***\n")
         else:
             nombre = input('Ingrese el nombre del trainer: ')
-            trainers[id] = {'nombreT': nombre}
+            apellidos = input('Ingrese el apellido del trainer: ')
+            trainers[id] = {'nombreT': nombre, 'apellidos': apellidos}
             guardarEnJson('trainers', trainers)
             rutaTrainers[id] = {'idHorario': [], 'idRutaRT': []}
             guardarEnJson('rutaTrainers', rutaTrainers)

@@ -23,5 +23,15 @@
       "teorica": 90.0,
       "practica": 80.0,
       "promedio": 85.0
+   },
+   "07": {
+      "teorica": 100.0,
+      "practica": 100.0,
+      "promedio": 100.0
+   },
+   "10": {
+      "teorica": 100.0,
+      "practica": 95.0,
+      "promedio": 97.5
    }
 }

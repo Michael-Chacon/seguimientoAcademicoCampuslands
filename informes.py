@@ -1,8 +1,10 @@
 from conexiones import conexion
-from notas import estudiantePruebaAdmision as promedio
+from notas import estudiantePruebaAdmision as promedio, obtenerModulosDeRutasNoTabla
 from validaciones import romperCiclo
 from utils import mostrarCampersConFiltro as busquedaConFiltro, mostrarInfoBasica, rutaTreinerHorario, listarRutas, obtenerNombreTrainer, camperPerteneceARuta
 campers = conexion('campers')
+rutas = conexion('rutas')
+
 
 def campersInscritos():
     print("\n\t***********************")
@@ -51,7 +53,6 @@ def campersReprovados():
 
 
 def rutaCamperTrainer():
-    rutas = conexion('rutas')
     bandera = True
     while bandera:
         print("\n******************************************************")
@@ -78,3 +79,26 @@ def rutaCamperTrainer():
                         print(f"| {llave} \t| {valor['nombreC']} \t| {valor['apellidos']} ")
                         print(80 * "-")
         bandera = romperCiclo(' el id de otra ruta para ver su trainer y campers')
+
+
+def filtrosXRuta():
+    print("\n******************************************************")
+    print("*   CAMPERS Y ENTRENADORES QUE PERTENECEN A UNA RUTA  *")
+    print("******************************************************\n")
+    listarRutas(rutas)
+    
+    idRuta = input("Seleccione la ruta por su respectivo id: ")
+    if idRuta not in rutas:
+        print(f"*** Error - el id {idRuta} no pertenece a ninguna ruta")
+    else:
+        print("\n\t***************************")
+        print(f"\t\t{rutas[idRuta]['nombreR']}  ")
+        print("\t***************************\n")
+
+        print(f"Trainer: {obtenerNombreTrainer(idRuta)}\n")
+
+        obtenerModulosDeRutasNoTabla(idRuta, 'fundamentos')
+        obtenerModulosDeRutasNoTabla(idRuta, 'programacion web')
+        obtenerModulosDeRutasNoTabla(idRuta, 'programacion formal')
+        obtenerModulosDeRutasNoTabla(idRuta, 'bases de datos')
+        obtenerModulosDeRutasNoTabla(idRuta, 'backend')

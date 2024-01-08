@@ -33,5 +33,19 @@
       "fechaInicio": "457",
       "fechaFin": "457",
       "idSalaM": "2"
+   },
+   "07": {
+      "idTrainerM": "107",
+      "idRutaM": "107",
+      "fechaInicio": "07-07-2015",
+      "fechaFin": "07-07-2015",
+      "idSalaM": "1"
+   },
+   "10": {
+      "idTrainerM": "107",
+      "idRutaM": "107",
+      "fechaInicio": "10-10-2026",
+      "fechaFin": "10-10-2026",
+      "idSalaM": "1"
    }
 }

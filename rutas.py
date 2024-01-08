@@ -43,7 +43,7 @@ def guardarRuta():
                 back = input("Ingrese el framework que que se verá en la ruta: ")
                 backend.append(back)
                 banderaHija = romperCiclo('otro framework al temario backend')
-            temarioRuta[idRuta] = {'fundamentos': ["Introducción a la algoritmia", " PSeInt", "Python", "Git y gitHub"], "programacion Web": ["HTML", " CSS", "Tailwind"],"programacion formal": [nombre], "bases de datos": db, "backend": backend}
+            temarioRuta[idRuta] = {'fundamentos': ["Introducción a la algoritmia", "PSeInt", "Python", "Git y gitHub"], "programacion web": ["HTML", "CSS", "Tailwind"], "programacion formal": [nombre], "bases de datos": db, "backend": backend}
             guardar('temarioRuta', temarioRuta)
 
             print(f"\nSeleccione la sala que le va a asignar a la nueva ruta:")

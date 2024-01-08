@@ -100,3 +100,28 @@ def camperPerteneceARuta(idCamper, idRuta):
         return True
     else: 
         return False
+    
+
+def camperEnNotacamper(idCamper, idRuta):
+    notas = con('notas')
+    if notas[idCamper]['idRutaN'] == idRuta:
+        return True
+    else: 
+        return False
+
+
+def contarCampers(modulo, idRuta):
+    campers = con('campers')
+    notas = con('notas') 
+    perdieron = 0
+    aprobaron = 0
+    for llave, valor in campers.items():
+        if valor['estado'] == 'aprobado' and valor['haveRuta'] == 'si':
+            if camperPerteneceARuta(llave, idRuta):
+                if notas[llave][modulo] > 60:
+                    aprobaron += 1
+                elif  notas[llave][modulo] == 0:
+                    continue
+                elif notas[llave][modulo] <= 60:
+                    perdieron += 1
+    return [perdieron, aprobaron]

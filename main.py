@@ -14,29 +14,45 @@ salas = con('salas')
 
 print("Hola, bienvenidos al programa que permite llevar el seguimiento académico de todos los campers")
 
-# mainFlag = True
-# while mainFlag:
-#     os.system('clear')
-#     print("\n\t********************")
-#     print("\t*  MENÚ PRINCIPAL  *")
-#     print("\t********************\n")
+mainFlag = True
+while mainFlag:
+    os.system('clear')
+    print("\n\t********************")
+    print("\t*  MENÚ PRINCIPAL  *")
+    print("\t********************\n")
 
-#     print("""
-#         1. Todo sobre campers\n
-#         2. Todo sobre trainers\n
-#         3. Todo sobre rutas\n
-#         0. Cerrar sesión\n
-#         """)
-#     break
+    print("""
+        1. Todo sobre campers\n
+        2. Todo sobre trainers\n
+        3. Todo sobre rutas\n
+        4. Informes\n
+        0. Cerrar sesión\n
+        """)
+    
+    opcion = input("\nIngrese el número de la opción correspondiente: ")
+    if opcion == '1':
+        pass
+    elif opcion == '2':
+        pass
+    elif opcion == '3':
+        pass
+    elif opcion == '4':
+        pass
+    elif opcion == '0':
+        break
+    else:
+        print("*** Error - Opción incorrecta ***")
+
+    
 
 # guardarCamper()
+# prueba(campers)
 # guardarTrainer()
 # listarInfo(trainers, 'nombreT')
 # relacion(campers)
 # rutaTreiner()
 # listarInfo(trainers, 'nombreT')
 # guardarRuta()
-# prueba(campers)
 # matricularCamper()
 # filtro()
 # print(trainers)
@@ -44,7 +60,8 @@ print("Hola, bienvenidos al programa que permite llevar el seguimiento académic
 
 #INFORMES
 # campersInscritos()
-# mostrarNotasAspirante()
-# trainesCampus()
 # campersReprovados()
-rutaCamperTrainer()
+# trainesCampus()
+# mostrarNotasAspirante()
+# rutaCamperTrainer()
+# filtrosXRuta() 
