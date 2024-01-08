@@ -41,4 +41,7 @@ print("Hola, bienvenidos al programa que permite llevar el seguimiento académic
 # filtro()
 # print(trainers)
 # print(pruebas)
+
+#INFORMES
 campersInscritos()
+mostrarNotasAspirante()

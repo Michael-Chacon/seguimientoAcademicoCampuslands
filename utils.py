@@ -4,23 +4,23 @@ from conexiones import conexion as con, guardar as guardarEnJson
 
 
 def mostrarInfoBasica(diccionario, name):
-        print(40 * "-")
-        print("| ID \t| NOMBRE ")
-        print(40 * "-")
+        print(60 * "-")
+        print("| ID \t| NOMBRE \t| APELLIDOS")
+        print(60 * "-")
         for llave, valor in diccionario.items():
-            print(f"| {llave} \t| {valor[name]} ")
-            print(40 * "-")
+            print(f"| {llave} \t| {valor[name]} \t| {valor['apellidos']}")
+            print(60 * "-")
 
 
 def mostrarCampersConFiltro(estado, ruta):
     campers = con('campers')
-    print(40 * "-")
-    print("| ID \t| NOMBRE ")
-    print(40 * "-")
+    print(80 * "-")
+    print("| ID \t| NOMBRE \t| APELLIDOS ")
+    print(80 * "-")
     for llave, valor in campers.items():
         if valor['estado'] == estado and valor['haveRuta'] == ruta:
-            print(f"| {llave} \t| {valor['nombreC']} ")
-            print(40 * "-")
+            print(f"| {llave} \t| {valor['nombreC']} \t| {valor['apellidos']} ")
+            print(80 * "-")
 
 
 def restarCupoAHorario(idHorario):
