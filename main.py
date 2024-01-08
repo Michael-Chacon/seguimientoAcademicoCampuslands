@@ -1,7 +1,6 @@
 import os
 from rutas import guardarRuta
-from conexiones import conexion as con, guardar
-from utils import mostrarInfoBasica as listarInfo
+from conexiones import conexion as con
 from notas import guardarNotasPrueba as prueba, matricularCamper, filtro
 from camper import guardar as guardarCamper #, mostrarNotasAspirante as relacion
 from trainer import guardar as guardarTrainer, guardarRutaTrainer as rutaTreiner
@@ -105,24 +104,3 @@ while True:
         print("*** Error - Opción incorrecta ***")
         salir = input("Enter para seleccionar opcion")
     
-
-# guardarCamper() y
-# prueba(campers) y
-# guardarTrainer() y
-# listarInfo(trainers, 'nombreT')-
-# relacion(campers) - 
-# rutaTreiner() y 
-# listarInfo(trainers, 'nombreT')
-# guardarRuta() y 
-# matricularCamper() y
-# filtro() y
-# print(trainers)
-# print(pruebas)
-
-#INFORMES
-# campersInscritos() y
-# campersReprovados() y
-# trainesCampus() y
-# mostrarNotasAspirante() y
-# rutaCamperTrainer()
-# filtrosXRuta() 
