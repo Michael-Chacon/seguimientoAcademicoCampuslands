@@ -68,3 +68,35 @@ def retornarNombreRuta(idRuta):
     rutas = con('rutas')
     return rutas[idRuta]['nombreR']
 
+
+def listarRutas(rutas):
+        print(60 * "-")
+        print("| ID \t| NOMBRE ")
+        print(60 * "-")
+        for llave, valor in rutas.items():
+            print(f"| {llave} \t| {valor['nombreR']} ")
+            print(60 * "-")
+
+
+def obtenerNombreTrainer(idRuta):
+    trainers = con('trainers')
+    for llave, valor in trainers.items():
+        if buscarRuta(llave, idRuta):
+            return valor['nombreT']
+            break
+
+
+def buscarRuta(idTrainer, idRuta):
+    rutaTrainer = con('rutaTrainers')
+    if idRuta in rutaTrainer[idTrainer]['idRutaRT']:
+        return True
+    else: 
+        return False
+
+
+def camperPerteneceARuta(idCamper, idRuta):
+    matriculas = con('matriculas')
+    if matriculas[idCamper]['idRutaM'] == idRuta:
+        return True
+    else: 
+        return False

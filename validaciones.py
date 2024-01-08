@@ -7,7 +7,7 @@ def existeElId(id, diccionario) -> bool:
 
 
 def romperCiclo(mensaje):
-    salir = input(f'Quiere agregar {mensaje}?\n\ts: Si\n\tn: No\n').lower()
+    salir = input(f'\nQuiere agregar {mensaje}?\n\ts: Si\n\tn: No\n').lower()
     if salir == 'n':
         return False
     else:
