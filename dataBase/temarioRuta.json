@@ -15,8 +15,8 @@
          "JavaScript"
       ],
       "bases de datos": [
-         "Mysql",
-         "MongoDb"
+         "Mysql P",
+         "MongoDb A"
       ],
       "backend": [
          "NodeJS y Express"
@@ -38,8 +38,8 @@
          "Java"
       ],
       "bases de datos": [
-         "Mysql",
-         "Postgresql"
+         "Mysql P",
+         "Postgresql A"
       ],
       "backend": [
          "Spring Boot"
@@ -61,8 +61,8 @@
          ".Net"
       ],
       "bases de datos": [
-         "Mysql",
-         " MongoDb"
+         "Mysql P",
+         "MongoDb A"
       ],
       "backend": [
          "NetCore"
@@ -84,12 +84,35 @@
          "PHP"
       ],
       "bases de datos": [
-         "Mysql",
-         "Postgresql"
+         "Mysql P",
+         "Postgresql A"
       ],
       "backend": [
          "Laravel",
          "Synfony"
+      ]
+   },
+   "5": {
+      "fundamentos": [
+         "Introducci\u00f3n a la algoritmia",
+         "PSeInt",
+         "Python",
+         "Git y gitHub"
+      ],
+      "programacion web": [
+         "HTML",
+         "CSS",
+         "Tailwind"
+      ],
+      "programacion formal": [
+         "Python"
+      ],
+      "bases de datos": [
+         "Mysql P",
+         "MongoDb A"
+      ],
+      "backend": [
+         "Django"
       ]
    }
 }

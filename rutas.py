@@ -29,11 +29,11 @@ def guardarRuta():
                 #hay que validar el ingreso de letras en el las DB
                 if i == 0:
                     principal = int(input("Seleccione el SGBD principal de la ruta: "))
-                    db.append(seleccionarSgbd(principal))
+                    db.append(seleccionarSgbd(principal) + " P")
                 else:
                     alternativo = int(input("Seleccione el SGBD alternativo de la ruta: "))
                     # temarioRuta[idRuta]['bases de datos'].append(seleccionarSgbd(alternativo))
-                    db.append(seleccionarSgbd(alternativo))
+                    db.append(seleccionarSgbd(alternativo) + " S")
 
             banderaHija = True
             print("\n***** BACKEND *****")

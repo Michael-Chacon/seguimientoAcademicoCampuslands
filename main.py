@@ -24,7 +24,7 @@ while True:
     print("""
         1. Todo sobre campers\n
         2. Todo sobre trainers\n
-        3. Todo sobre rutas\n
+        3. Registrar rutas\n
         4. Informes\n
         0. Cerrar sesión\n
         """)
