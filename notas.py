@@ -118,7 +118,8 @@ def filtro():
     rutas = conexion('rutas')
     notas = conexion('notas')
     main = True
-    while main:    
+    while main: 
+        os.system("clear")   
         print(f"\nListado de campers con estado aprobado:")
         mostrarCampers('aprobado', 'si')
         camper = input("Seleccine el id del camper al que le va a asiganar la nota del filtro: ")
@@ -211,7 +212,7 @@ def filtro():
                 guardar('campers', campers)
             print("\n----- Nota registrada con exito -----\n")
             main = romperCiclo("la calificacion de un filtro a otro camper")
-        
+        salir = input("Enter...")
         
 
 def obtenerModulosDeRutas(idRuta, modulo):
